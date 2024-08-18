@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>rest app</title>
+</head>
+<body>
+    <h1>REST APP</h1>
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="prompt" rows="4" cols="50"></textarea>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+    {% if response %}
+        <h2>Response:</h2>
+        <p>{{ response }}</p>
+    {% endif %}
+    {% if audio_file %}
+    <h2>Audio:</h2>
+    {{ audio_file }}
+    <audio controls> 
+        <source src="{{ audio_file }} " type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <br>
+    <a href="{{ audio_file }}" download="output.mp3">Download Audio</a>
+{% endif %}
+</body>
+</html>

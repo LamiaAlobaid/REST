@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Safety Warning</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: url("{% static 'images/background.jpeg' %}") no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(128, 0, 128, 0.2); /* Purple filter */
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            width: 100%;
+        }
+
+        .warning-card {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .warning-icon {
+            color: #dc3545;
+            font-size: 3rem;
+        }
+
+        .warning-text {
+            margin-top: 1rem;
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .back-button {
+            margin-top: 2rem;
+            background-color: #dc3545;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #c82333;
+        }
+
+        .logo {
+            max-width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <img src="{% static 'images/tu.png' %}" alt="Tuwaiq Academy" class="logo">
+            <a href="{% url 'link_upload' %}">
+            <img src="{% static 'images/restlogo.png' %}" alt="Meta" class="logo">
+        </a>
+            <img src="{% static 'images/metaa.png' %}" alt="Meta" class="logo">
+        </div>
+
+        <!-- Warning Section -->
+        <div class="warning-card">
+            <i class="bi bi-exclamation-triangle-fill warning-icon"></i>
+            <p class="warning-text">The video you entered is not safe.</p>
+            <p>Please try again.</p>
+            <button onclick="history.back()" class="back-button">Go Back</button>
+        </div>
+    </div>
+</body>
+
+</html>
