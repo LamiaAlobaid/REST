@@ -11,6 +11,11 @@ REST is a powerful tool designed to process YouTube videos by leveraging advance
 - **Performance Monitoring**: Utilizes Weight and Bias for detailed monitoring and analysis.
 - **Ethical Compliance**: Ensures ethical use of AI with LLAMA Guard.
 
+
+## UI
+![IMG_6516 (1)](https://github.com/user-attachments/assets/99974f62-1b06-42af-8495-b0c8fe876bc3)
+![IMG_6508 (1)](https://github.com/user-attachments/assets/79397923-89bb-425f-a4a1-ff2845e6f0e6)
+
 ## Technology Stack
 
 - **Backend**: Django, Python
